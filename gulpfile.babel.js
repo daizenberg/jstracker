@@ -1,11 +1,13 @@
-var gulp = require('gulp')
-var babel = require('gulp-babel')
-var sourcemaps = require('gulp-sourcemaps')
+//var gulp = require('gulp')
+//var babel = require('gulp-babel')
+import gulp from 'gulp'
+import sourcemaps from 'gulp-sourcemaps'
+import babel from 'gulp-babel'
 
-gulp.task('run', function() {
-    return gulp.src('*.js')
+gulp.task('run', () => {
+    return gulp.src('src/*.js')
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('build'))
 })
